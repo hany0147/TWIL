@@ -53,3 +53,38 @@ let won = 5000;
 const result = `이 과자는 ${won}원입니다`;
 
 // 화살표 함수
+const add2 = (x, y) => {
+  return x + y;
+}
+const add3 = (x, y) => (x + y);
+
+function not1(x) {
+  return !x;
+}
+
+const not2 = x => !x;
+
+const obj = (x, y) => ({x, y}) // 객체를 리턴하는 경우는 소괄호가 필수다.
+
+// this를 쓸거면 function을 쓰고, 안 쓸거면 화살표 함수로 통일시키는 걸 권장
+
+// 구조분해 할당
+const example = {
+  a: 123,
+  b: {
+    c: 135,
+    d: 146,
+  }
+}
+// const a = example.a;
+// const d = example.b.d;
+const { a, b: {d} } = example;
+
+arr = [1, 2, 3, 4, 5]
+// const x = arr[0]
+// const y = arr[1]
+// const z = arr[4]
+
+const [x, y, , , z] = arr;
+
+// Promise, async/await

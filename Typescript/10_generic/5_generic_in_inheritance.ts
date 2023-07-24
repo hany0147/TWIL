@@ -77,3 +77,5 @@ class MaleIdol extends Idol2{
 }
 
 type SpecificIdol<T extends Idol2> = T extends MaleIdol ? MaleIdol : FemaleIdol;
+
+const idol2: SpecificIdol<FemaleIdol> = new FemaleIdol()
