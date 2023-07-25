@@ -88,3 +88,60 @@ arr = [1, 2, 3, 4, 5]
 const [x, y, , , z] = arr;
 
 // Promise, async/await
+/**
+ * Promise: 내용이 실행은 되었지만 결과를 아직 반환하지 않은 객체
+ * - Then을 붙이면 결과를 반환함
+ * - 코드를 분리할 수 있다.
+ * - resolve ->  then으로 연결, reject -> catch로 연결
+ * 
+ * for await
+ */
+
+// Map/Set
+const m = new Map();
+m.set('a', 'b');
+console.log(m);
+m.set({'a': 'b'}, 'c');
+console.log(m);
+console.log(m.size);
+
+const s = new Set();
+s.add(1)
+s.add(2)
+s.add(1)
+console.log(s);
+
+const wm = new WeakMap(); // garbage collector
+let obj3 = {}
+wm.set(obj3, '123');
+console.log(wm);
+const ws = new WeakSet();
+
+// Null병합, 옵셔널 체이닝
+const ae = 0;
+const b = ae || 3; // falsy값이면 뒤로 넘어간다.
+console.log(b)
+
+const c1 = 0;
+const d1 = c1 ?? 3;
+console.log(d1); // ?? 연산자는 null과 undefined일 때만 뒤로 넘어감.
+
+const e1 = null;
+const f1 = e1 ?? 3;
+console.log(f1);
+
+c1?.d; // c?.[0] (o)  // c?[0] (x)
+
+c2 = null;
+
+console.log(c2?.[0] ?? '123'); // 둘이 합쳐 쓰면 좋음
+
+// 프론트엔드 자바스크립트
+/**
+ * AJAX
+ * Axios 라이브러리를 사용하는 게 편함.
+ * FormData: HTML form 태그에 담긴 데이터를 AJAX 요청으로 보내고 싶은 경우
+ * endcodeURIComponent :가끔 주소창에 한글 입력하면 서버가 못하는 경우를 대비해 쓴다.
+ * HTML 태그에 데이터를 저장하는 방법
+ * data-user-job -> dataset.userJob
+*/
