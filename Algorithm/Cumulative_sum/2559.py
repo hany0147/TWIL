@@ -1,4 +1,4 @@
-# 두더지 잡기 : 골드 2
+# 수열 : 실버3
 
 a, b = map(int, input().split())
 arr = list(map(int, input().split()))
