@@ -11,15 +11,25 @@ module.exports = () => {
 
   // 각 요청마다 실행됨
   passport.deserializeUser((id, done) => {
-    User.findOne({where: { id }})
+    User.findOne({
+      where: { id },
+      include: [{
+          model: User,
+          attributes: ['id', 'nick'],
+          as: 'Followers',
+        }, {
+          model: User,
+          attributes: ['id', 'nick'],
+          as: 'Followings',
+        }],
+    })
       .then((user) => done(null, user))
       .catch(err => done(err));
   });
-};
-
-// 즉 serializeUser는 사용자 정보 객체에서 ID만 추려 세션에 저장한는 것.
-// deserializeUser는 세션에 저장한 아이디를 통해 사용자 정보 객체를 불러오는 곳.
-
-local();
-kakao();
+  // 즉 serializeUser는 사용자 정보 객체에서 ID만 추려 세션에 저장한는 것.
+  // deserializeUser는 세션에 저장한 아이디를 통해 사용자 정보 객체를 불러오는 곳.
   
+  local();
+  kakao();
+    
+};

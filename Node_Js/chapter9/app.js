@@ -11,6 +11,8 @@ dotenv.config(); // process.env 제일 위에 넣는 게 좋다.
 const { sequelize } = require('./models')
 const pageRouter = require('./routes/page');
 const authRouter = require('./routes/auth');
+const postRouter = require('./routes/post');
+const userRouter = require('./routes/user');
 const passportConfig = require('./passport');
 
 const app = express();
@@ -31,6 +33,7 @@ sequelize.sync({ force: false }) // true로 하면, 테이블 삭제하고 다�
 
 app.use(morgan('dev')); // combined
 app.use(express.static(path.join(__dirname, 'public')))
+app.use('/img', express.static(path.join(__dirname, 'uploads')))
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
@@ -49,6 +52,8 @@ app.use(passport.session());
 
 app.use('/', pageRouter);
 app.use('/auth', authRouter);
+app.use('/post', postRouter);
+app.use('/user', userRouter);
 app.use((req, res, next) => {
   const error = new Error(`${req.method} ${req.url} 라우터가 없습니다.`);
   error.status = 404;

@@ -14,7 +14,7 @@ const sequelize = new Sequelize(
 db.sequelize = sequelize;
 
 const basename = path.basename(__filename); // index.js
-console.log('__filename:', __filename, 'basename:', basename );
+// console.log('__filename:', __filename, 'basename:', basename );
 fs.readdirSync(__dirname)
   .filter(file => { // .이 붙어있으면 숨김파일임
     return file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js';
