@@ -1,6 +1,3 @@
-from typing import Any
-
-
 class Robot:
     population = 0  # 클래스변수: 인스턴스들이 공유하는 변수
 

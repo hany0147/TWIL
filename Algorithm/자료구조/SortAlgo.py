@@ -1,6 +1,7 @@
 # https://velog.io/@jguuun/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
 arr = [8, 4, 6, 2, 9, 1, 3, 7, 5]
 
+
 def bubble_sort(arr):
     n = len(arr)
     for i in range(n - 1):
@@ -10,9 +11,11 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
         print(arr)
 
+
 # print('before:', arr)
 # bubble_sort(arr)
 # print('after:', arr)
+
 
 def selection_sort(arr):
     n = len(arr)
@@ -24,9 +27,11 @@ def selection_sort(arr):
         arr[i], arr[min_index] = arr[min_index], arr[i]
         print(arr)
 
+
 # print('before:', arr)
 # selection_sort(arr)
 # print('after:', arr)
+
 
 def insertion_sort(arr):
     n = len(arr)
@@ -36,9 +41,11 @@ def insertion_sort(arr):
                 arr[j - 1], arr[j] = arr[j], arr[j - 1]
         print(arr)
 
+
 # print('before:', arr)
 # insertion_sort(arr)
 # print('after:', arr)
+
 
 def merge_sort(arr):
     if len(arr) < 2:
@@ -61,9 +68,11 @@ def merge_sort(arr):
     print(merged_arr)
     return merged_arr
 
+
 # print('before:', arr)
 # arr = merge_sort(arr)
 # print('after:', arr)
+
 
 def quick_sort(arr):
     if len(arr) <= 1:
@@ -80,6 +89,7 @@ def quick_sort(arr):
     print(front_arr, pivot_arr, back_arr)
     return quick_sort(front_arr) + quick_sort(pivot_arr) + quick_sort(back_arr)
 
-print('before:', arr)
+
+print("before:", arr)
 arr = quick_sort(arr)
-print('after:', arr)
+print("after:", arr)
