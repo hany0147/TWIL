@@ -10,7 +10,7 @@
 // module.exports = pool.promise();
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize("node-complete", "root", "패스워드", {
+const sequelize = new Sequelize("node-complete", "root", "비밀번호", {
   dialect: "mysql",
   host: "localhost",
 });
